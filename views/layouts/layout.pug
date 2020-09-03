@@ -1,0 +1,12 @@
+doctype html
+html(lang='en')
+    head
+        block title
+        if assets
+            each stylesheet in assets.css
+                link(rel="stylesheet", href=`/public/${stylesheet}`)
+    body
+        block content
+            if assets
+                each file in assets.js
+                    script(src=`/public/${file}`)

@@ -1,0 +1,9 @@
+extends ../layouts/layout
+
+block title
+  title Error - #{err.statusCode}
+
+prepend content
+  h1= err.message
+  h1
+    a(href="/") Go To Home
