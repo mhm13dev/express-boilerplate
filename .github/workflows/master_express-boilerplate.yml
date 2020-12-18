@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'express-boilerplate'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a3f9f0205d7b4f32bbbf24dfd149c23e }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e74187e10fc949caa29be943ee96321c }}
         package: .
