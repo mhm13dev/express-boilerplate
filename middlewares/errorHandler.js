@@ -81,9 +81,9 @@ module.exports = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
 
-  if (process.env.NODE_ENV === 'development') {
+  if (process.env.APPSETTING_NODE_ENV === 'development') {
     sendErrorDev(err, req, res);
-  } else if (process.env.NODE_ENV === 'production') {
+  } else if (process.env.APPSETTING_NODE_ENV === 'production') {
     if (err.name === 'CastError') {
       err = handleCastErrorDB(err);
     }

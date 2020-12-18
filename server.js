@@ -1,6 +1,6 @@
 /* eslint-disable */
 // Environment Variables From .env
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.APPSETTING_NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
@@ -35,7 +35,7 @@ const app = require('./app');
 const mongoose = require('mongoose');
 
 // Connect Database
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect(process.env.CUSTOMCONNSTR_DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

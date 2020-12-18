@@ -17,7 +17,7 @@ const apiRouter = require('./routes/api.routes/api');
 // Initialize express app
 const app = express();
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.APPSETTING_NODE_ENV !== 'production') {
   app.use(morgan('dev'));
 } else {
   app.use(morgan('tiny'));
@@ -51,7 +51,7 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 // For Static Files that are public and used by client side views
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.APPSETTING_NODE_ENV !== 'production') {
   app.use('/public', express.static(path.join(__dirname, 'public')));
 } else {
   app.use(
@@ -64,7 +64,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // For Static Files that are stored on the server and not used for client side views
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.APPSETTING_NODE_ENV !== 'production') {
   app.use('/static', express.static(path.join(__dirname, 'static')));
 } else {
   app.use(
